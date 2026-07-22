@@ -23,7 +23,7 @@ function HomeScreen({ go, tweaks = {} }) {
     <main>
       {/* HERO */}
       <section style={{ position: 'relative', background: 'var(--steel-900)', color: '#fff', overflow: 'hidden' }}>
-        <img src="./assets/img/production-floor-panoramic.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.34 }} />
+        <img src="/assets/img/production-floor-panoramic.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.34 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(14,18,54,0.94) 0%, rgba(14,18,54,0.78) 42%, rgba(14,18,54,0.34) 100%)', opacity: heroOverlay }} />
         <div style={{ ...wrap, position: 'relative', padding: '104px 32px 96px' }}>
           <SectionEyebrow color="var(--chrome-cyan)">Precision Machining · Lomira, Wisconsin</SectionEyebrow>
@@ -37,8 +37,8 @@ function HomeScreen({ go, tweaks = {} }) {
             Ground to sky — and everything in between.
           </p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <Button variant="primary" size="lg" onClick={() => go('contact')}>Get a Quote →</Button>
-            <Button variant="secondary" size="lg" onClick={() => { window.location.href = 'tel:9202697825'; }} style={{ color: '#fff', backgroundColor: 'transparent', border: 'none' }}>Call (920) 269-7825</Button>
+            <window.LinkButton variant="primary" size="lg" href={window.href('contact')}>Get a Quote →</window.LinkButton>
+            <window.LinkButton variant="secondary" size="lg" href="tel:9202697825" style={{color: '#fff', backgroundColor: 'transparent', border: 'none'}}>Call (920) 269-7825</window.LinkButton>
           </div>
         </div>
       </section>
@@ -93,16 +93,16 @@ function HomeScreen({ go, tweaks = {} }) {
               <SectionEyebrow>What We Do</SectionEyebrow>
               <h2 style={{ margin: '12px 0 0' }}>From One Prototype to a Production Program</h2>
             </div>
-            <Button variant="secondary" onClick={() => go('services')}>All Services →</Button>
+            <window.LinkButton variant="secondary" href={window.href('services')}>All Services →</window.LinkButton>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 18 }}>
             {services.map(([t, d, slug], i) => (
-              <Card key={t} accent={cardAccent} interactive onClick={() => go('service:' + slug)}>
+              <a key={t} href={window.href('service:' + slug)} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}><Card accent={cardAccent} interactive>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--text-faint)' }}>{String(i + 1).padStart(2, '0')}</span>
                 <h3 style={{ margin: '6px 0 8px', fontSize: 23 }}>{t}</h3>
                 <p style={{ margin: '0 0 12px', fontSize: 15, color: 'var(--text-muted)' }}>{d}</p>
                 <span style={{ fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600, fontSize: 14, color: 'var(--blue-600)' }}>Learn More →</span>
-              </Card>
+              </Card></a>
             ))}
           </div>
         </div>
@@ -112,13 +112,7 @@ function HomeScreen({ go, tweaks = {} }) {
       <section style={{ ...wrap, padding: '88px 32px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
           <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-            <image-slot
-              id="home-ground-to-sky"
-              placeholder="Drop a part / shop photo"
-              shape="rounded"
-              radius="6"
-              style={{ display: 'block', width: '100%', height: '440px' }}
-            ></image-slot>
+            <img src="/assets/img/trak-dpm5.jpg" alt="Precision machining on the Damark shop floor" style={{ display: 'block', width: '100%', height: '440px', objectFit: 'cover' }} />
           </div>
           <div>
             <SectionEyebrow>Ground to Sky</SectionEyebrow>
@@ -142,10 +136,10 @@ function HomeScreen({ go, tweaks = {} }) {
             <p style={{ fontSize: 17, color: 'var(--blue-100)' }}>
               Damark was founded in 1995 on a simple belief — do the work right, treat people straight, and stand behind what you make. We've never had a sales team. Every customer came through a referral, a relationship, or a reputation that preceded the first phone call. That hasn't changed.
             </p>
-            <Button variant="secondary" style={{ color: '#fff', backgroundColor: '#1D2675', border: 'none', marginTop: 8 }} onClick={() => go('about')}>Learn More About Damark →</Button>
+            <window.LinkButton variant="secondary" href={window.href('about')} style={{color: '#fff', backgroundColor: '#1D2675', border: 'none', marginTop: 8}}>Learn More About Damark →</window.LinkButton>
           </div>
           <div style={{ border: '1px solid var(--blue-800)', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
-            <img src="./assets/img/hq-lomira.jpg" alt="Damark HQ in Lomira, WI" style={{ width: '100%', display: 'block' }} />
+            <img src="/assets/img/hq-lomira.jpg" alt="Damark HQ in Lomira, WI" style={{ width: '100%', display: 'block' }} />
           </div>
         </div>
       </section>
@@ -157,8 +151,8 @@ function HomeScreen({ go, tweaks = {} }) {
           Send us your print, your drawing, or just describe what you need. We'll get back to you fast. No automated reply, no runaround.
         </p>
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Button variant="primary" size="lg" onClick={() => go('contact')}>Email Your RFQ →</Button>
-          <Button variant="secondary" size="lg" onClick={() => { window.location.href = 'tel:9202697825'; }}>Call (920) 269-7825</Button>
+          <window.LinkButton variant="primary" size="lg" href={window.href('contact')}>Email Your RFQ →</window.LinkButton>
+          <window.LinkButton variant="secondary" size="lg" href="tel:9202697825">Call (920) 269-7825</window.LinkButton>
         </div>
       </section>
     </main>

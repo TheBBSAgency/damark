@@ -25,7 +25,7 @@ function CareersScreen({ go }) {
     <main>
       {/* HERO */}
       <section style={{ position: 'relative', background: 'var(--steel-900)', color: '#fff', overflow: 'hidden' }}>
-        <img src="./assets/img/production-floor-panoramic.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
+        <img src="/assets/img/production-floor-panoramic.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(14,18,54,0.94), rgba(14,18,54,0.55))' }} />
         <div style={{ ...wrap, position: 'relative', padding: '76px 32px 68px' }}>
           <SectionEyebrow color="var(--chrome-cyan)">Careers</SectionEyebrow>
@@ -34,7 +34,7 @@ function CareersScreen({ go }) {
             We're a small shop, which means the work is varied, the pace is real, and what you do matters. You're not a number here — you're part of how this place runs.
           </p>
           <div style={{ display: 'flex', gap: 14, marginTop: 24, flexWrap: 'wrap' }}>
-            <Button variant="primary" size="lg" onClick={() => { const el = document.getElementById('apply'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}>Apply Now →</Button>
+            <window.LinkButton variant="primary" size="lg" href="#apply">Apply Now →</window.LinkButton>
           </div>
         </div>
       </section>
@@ -111,23 +111,17 @@ function CareersScreen({ go }) {
             <p style={{ fontSize: 15, color: 'var(--blue-100)', margin: '4px 0 0' }}>Or stop by — Mon–Fri, 6:00 AM – 2:30 PM · 1015 Church Street, Lomira, WI</p>
           </div>
           <div style={{ background: '#fff', borderRadius: 'var(--radius-md)', padding: 'var(--space-6)' }}>
-            {sent ? (
-              <div style={{ padding: '32px 8px', textAlign: 'center' }}>
-                <Badge tone="pass">Application Received</Badge>
-                <h2 style={{ margin: '16px 0 8px' }}>Thanks — We'll Be In Touch</h2>
-                <p style={{ color: 'var(--text-muted)' }}>We review every application personally. If there's a fit, we'll reach out to set up a time to talk.</p>
-                <Button variant="secondary" onClick={() => setSent(false)}>Submit Another</Button>
-              </div>
-            ) : (
-              <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              <form action={window.FORM_ENDPOINT} method="POST" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <input type="hidden" name="_subject" value="New Careers application from the Damark website" />
+                <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
                 <h2 style={{ margin: 0, fontSize: 'var(--display-sm)', color: 'var(--text-strong)' }}>Apply for a Position</h2>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
-                  <Input label="Full Name" required placeholder="Your name" />
-                  <Input label="Phone" type="tel" required placeholder="(000) 000-0000" />
-                  <Input label="Email" type="email" required placeholder="you@email.com" />
-                  <Input label="Position of Interest" placeholder="CNC Machinist" />
+                  <Input label="Full Name" name="name" required placeholder="Your name" />
+                  <Input label="Phone" name="phone" type="tel" required placeholder="(000) 000-0000" />
+                  <Input label="Email" name="email" type="email" required placeholder="you@email.com" />
+                  <Input label="Position of Interest" name="position" placeholder="CNC Machinist" />
                 </div>
-                <Textarea label="Anything you want us to know?" rows={4} placeholder="Anything that's not on your resume (optional)." />
+                <Textarea label="Anything you want us to know?" name="message" rows={4} placeholder="Anything that's not on your resume (optional)." />
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
                   <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                     <span style={{ fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 'var(--text-sm)', textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-strong)' }}>Resume <span style={{ color: 'var(--status-fail)' }}>*</span></span>
@@ -143,7 +137,6 @@ function CareersScreen({ go }) {
                 <Button variant="primary" size="lg" type="submit">Submit Application →</Button>
                 <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>Reviewed by a real person.</span>
               </form>
-            )}
           </div>
         </div>
       </section>

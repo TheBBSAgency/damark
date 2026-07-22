@@ -1,0 +1,33 @@
+/* Damark site chrome — mobile menu, hover states, responsive layout */
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #fff; }
+.page { background: #fff; overflow-x: hidden; }
+.page img { max-width: 100%; }
+
+/* --- CSS-only mobile menu --- */
+.dm-menu-cb { position: absolute; width: 0; height: 0; opacity: 0; pointer-events: none; }
+.dm-hamburger { display: none; }
+.dm-nav-mobile { display: none; }
+.dm-ham-bar { display: block; width: 20px; height: 2px; background: var(--text-strong); }
+
+/* --- button / link hover polish (no JS) --- */
+.dm-btn { transition: background 120ms ease, border-color 120ms ease, color 120ms ease; }
+.dm-btn-primary:hover { background: var(--blue-700); border-color: var(--blue-700); }
+.dm-btn-secondary:hover { border-color: var(--blue-600); }
+.dm-navlink:hover { color: var(--blue-600) !important; }
+.dm-faq summary::-webkit-details-marker { display: none; }
+.dm-faq[open] .dm-faq-plus { transform: rotate(45deg); }
+a.dm-card-link { transition: transform 120ms ease; }
+
+@media (max-width: 860px) {
+  .dm-nav-desktop { display: none !important; }
+  .dm-hamburger { display: inline-flex !important; }
+  #dm-menu-toggle:checked ~ .dm-nav-mobile { display: flex !important; }
+  .dm-header-row { padding-left: 10px !important; padding-right: 10px !important; }
+  /* collapse every multi-column layout to a single column */
+  .page [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  .page [style*="max-width: 1240px"], .page [style*="max-width: 920px"] { padding-left: 18px !important; padding-right: 18px !important; }
+  .page [style*="104px 32px 96px"], .page [style*="72px 32px 64px"], .page [style*="64px 32px 60px"], .page [style*="76px 32px 68px"], .page [style*="72px 32px 8px"] { padding-top: 48px !important; padding-bottom: 44px !important; }
+  .page [style*="order: 1"], .page [style*="order: 2"] { order: 0 !important; }
+  .page footer [style*="justify-content: space-between"] { flex-wrap: wrap; gap: 8px; }
+}

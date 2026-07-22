@@ -1,0 +1,16 @@
+{
+  "name": "damark-website-build",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build tooling that generates the static Damark Manufacturing website from the design-system source.",
+  "type": "module",
+  "scripts": {
+    "build": "node build/build.mjs"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-react": "^7.23.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

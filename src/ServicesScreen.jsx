@@ -18,7 +18,7 @@ function ServicesScreen({ go }) {
     <main>
       {/* PAGE HEADER */}
       <section style={{ position: 'relative', background: 'var(--steel-900)', color: '#fff', overflow: 'hidden' }}>
-        <img src="./assets/img/precision-machining.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
+        <img src="/assets/img/precision-machining.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(14,18,54,0.95) 0%, rgba(14,18,54,0.8) 48%, rgba(14,18,54,0.4) 100%)' }} />
         <div style={{ ...wrap, position: 'relative', padding: '72px 32px 64px' }}>
           <SectionEyebrow color="var(--chrome-cyan)">Services</SectionEyebrow>
@@ -52,14 +52,14 @@ function ServicesScreen({ go }) {
         {services.map((s, i) => (
           <div key={s.slug} style={{ display: 'grid', gridTemplateColumns: i % 2 ? '1fr 1.1fr' : '1.1fr 1fr', gap: 44, alignItems: 'center' }}>
             <div style={{ order: i % 2 ? 2 : 1, borderRadius: 'var(--radius-md)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-              <img src={`./assets/img/${s.img}`} alt={s.nav} style={{ width: '100%', height: 300, objectFit: 'cover', display: 'block' }} />
+              <img src={`/assets/img/${s.img}`} alt={s.nav} style={{ width: '100%', height: 300, objectFit: 'cover', display: 'block' }} />
             </div>
             <div style={{ order: i % 2 ? 1 : 2 }}>
               <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-faint)', fontSize: 14 }}>{String(i + 1).padStart(2, '0')}</span>
               <h2 style={{ fontSize: 'var(--display-sm)', margin: '4px 0 12px' }}>{s.nav}</h2>
               <p style={{ fontSize: 16.5 }}>{s.card}</p>
               <div style={{ display: 'flex', gap: 12, marginTop: 18, flexWrap: 'wrap' }}>
-                <Button variant="primary" onClick={() => go('service:' + s.slug)}>Learn More →</Button>
+                <window.LinkButton variant="primary" href={window.href('service:' + s.slug)}>Learn More →</window.LinkButton>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@ function ServicesScreen({ go }) {
             <p style={{ fontSize: 16.5 }}>
               We machine across a wide range of materials. Got a material question? <strong>Ask us — we'll tell you whether it's something we can run.</strong>
             </p>
-            <Button variant="secondary" onClick={() => go('contact')} style={{ marginTop: 6, color: '#fff', backgroundColor: '#1D2675', padding: 12, fontWeight: 700, border: 'none' }}>Ask a Material Question →</Button>
+            <window.LinkButton variant="secondary" href={window.href('contact')} style={{marginTop: 6, color: '#fff', backgroundColor: '#1D2675', padding: 12, fontWeight: 700, border: 'none'}}>Ask a Material Question →</window.LinkButton>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {materials.map((m) => <Badge key={m} tone="brand" size="md">{m}</Badge>)}
@@ -122,8 +122,8 @@ function ServicesScreen({ go }) {
             Send us your print or describe what you need. We turn quotes around based on job complexity — and we'll tell you upfront if something isn't a fit.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Button variant="primary" size="lg" onClick={() => go('contact')}>Email Your RFQ →</Button>
-            <Button variant="secondary" size="lg" onClick={() => { window.location.href = 'tel:9202697825'; }} style={{ color: '#fff', borderColor: 'var(--steel-500)', backgroundColor: 'transparent', border: 'none' }}>Call (920) 269-7825</Button>
+            <window.LinkButton variant="primary" size="lg" href={window.href('contact')}>Email Your RFQ →</window.LinkButton>
+            <window.LinkButton variant="secondary" size="lg" href="tel:9202697825" style={{color: '#fff', borderColor: 'var(--steel-500)', backgroundColor: 'transparent', border: 'none'}}>Call (920) 269-7825</window.LinkButton>
           </div>
         </div>
       </section>

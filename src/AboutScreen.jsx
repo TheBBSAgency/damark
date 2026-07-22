@@ -24,7 +24,7 @@ function AboutScreen({ go }) {
     <main>
       {/* HERO */}
       <section style={{ position: 'relative', background: 'var(--steel-900)', color: '#fff', overflow: 'hidden' }}>
-        <img src="./assets/img/welding.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.26 }} />
+        <img src="/assets/img/welding.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.26 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(14,18,54,0.94), rgba(14,18,54,0.6))' }} />
         <div style={{ ...wrap, position: 'relative', padding: '76px 32px 68px' }}>
           <SectionEyebrow color="var(--chrome-cyan)">About Damark</SectionEyebrow>
@@ -118,7 +118,7 @@ function AboutScreen({ go }) {
           </div>
           <div style={{ position: 'sticky', top: 116, display: 'flex', flexDirection: 'column', gap: 20 }}>
             <div style={{ border: '1px solid var(--blue-800)', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
-              <img src="./assets/img/hq-lomira.jpg" alt="Damark HQ, Lomira WI" style={{ width: '100%', display: 'block' }} />
+              <img src="/assets/img/hq-lomira.jpg" alt="Damark HQ, Lomira WI" style={{ width: '100%', display: 'block' }} />
             </div>
             <PullQuote name="Dave Buerger" title="Founder" tone="brand">
               Everybody was betting against me. They were taking bets on how soon I'd be out.
@@ -131,7 +131,7 @@ function AboutScreen({ go }) {
       <section style={{ ...wrap, padding: '80px 32px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 56, alignItems: 'start' }}>
           <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-            <img src="./assets/img/precision-machining.jpg" alt="On the Damark floor" style={{ width: '100%', display: 'block' }} />
+            <img src="/assets/img/precision-machining.jpg" alt="On the Damark floor" style={{ width: '100%', display: 'block' }} />
           </div>
           <div>
             <SectionEyebrow>The Next Generation</SectionEyebrow>
@@ -161,8 +161,8 @@ function AboutScreen({ go }) {
           Send us your print or describe what you need. You'll get a real person and a straight answer.
         </p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Button variant="primary" size="lg" onClick={() => go('contact')}>Get a Quote →</Button>
-          <Button variant="secondary" size="lg" onClick={() => go('services')}>See What We Do</Button>
+          <window.LinkButton variant="primary" size="lg" href={window.href('contact')}>Get a Quote →</window.LinkButton>
+          <window.LinkButton variant="secondary" size="lg" href={window.href('services')}>See What We Do</window.LinkButton>
         </div>
       </section>
     </main>

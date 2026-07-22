@@ -27,29 +27,22 @@ function ContactScreen() {
       <section style={{ ...wrap, padding: '64px 24px', display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 48, alignItems: 'start' }}>
         {/* FORM */}
         <Card style={{ padding: 'var(--space-6)' }}>
-          {sent ? (
-            <div style={{ padding: '40px 8px', textAlign: 'center' }}>
-              <Badge tone="pass">RFQ Received</Badge>
-              <h2 style={{ margin: '16px 0 8px' }}>Thanks — We'll Be In Touch</h2>
-              <p style={{ color: 'var(--text-muted)' }}>A real person will get back to you fast. If it's urgent, call <a href="tel:9202697825" style={{ color: 'var(--blue-600)', fontWeight: 600, textDecoration: 'none' }}>(920) 269-7825</a>.</p>
-              <Button variant="secondary" onClick={() => setSent(false)}>Send Another</Button>
-            </div>
-          ) : (
-            <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+            <form action={window.FORM_ENDPOINT} method="POST" style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+              <input type="hidden" name="_subject" value="New RFQ from the Damark website" />
+              <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
               <h2 style={{ margin: 0, fontSize: 'var(--display-sm)' }}>Request a Quote</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                <Input label="Name" required placeholder="Your name" />
-                <Input label="Company" placeholder="Company name" />
-                <Input label="Email" type="email" required placeholder="you@company.com" />
-                <Input label="Phone" type="tel" placeholder="(000) 000-0000" />
+                <Input label="Name" name="name" required placeholder="Your name" />
+                <Input label="Company" name="company" placeholder="Company name" />
+                <Input label="Email" name="email" type="email" required placeholder="you@company.com" />
+                <Input label="Phone" name="phone" type="tel" placeholder="(000) 000-0000" />
               </div>
-              <Textarea label="Describe the job" rows={5} required placeholder="Material, quantity, tolerances, deadline — or just describe what you need. Attach a print if you have one." />
+              <Textarea label="Describe the job" name="message" rows={5} required placeholder="Material, quantity, tolerances, deadline — or just describe what you need. Attach a print if you have one." />
               <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
                 <Button variant="primary" size="lg" type="submit">Email Your RFQ →</Button>
                 <span style={{ fontSize: 14, color: 'var(--text-muted)' }}>Reaches a real person — no automated reply.</span>
               </div>
             </form>
-          )}
         </Card>
 
         {/* CONTACT INFO */}

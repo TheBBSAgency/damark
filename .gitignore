@@ -1,0 +1,9 @@
+# build dependencies (regenerated with `npm install`)
+src/node_modules/
+# transfer / scratch
+_incoming.tgz
+_to_delete/
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log

@@ -1,18 +1,62 @@
-# Website UI Kit — Damark Manufacturing
+# Damark Manufacturing — Website
 
-Interactive recreation of the Damark marketing site, built from the approved website content (`Damark_Website_Content.docx`) and brand voice. Composes the design-system primitives — it does not re-implement them.
+Production static website for Damark Manufacturing (Lomira, WI). Every page is
+pre-rendered to plain HTML: fast, crawlable, and dependency-free at runtime.
+The host serves the files in this repository as-is — there is no build step on
+the server.
 
-## Screens
-- **HomeScreen** — hero over the shop floor, proof-stat band, "what sets us apart", services grid, ground-to-sky industries, family-owned snapshot, RFQ CTA.
-- **ServicesScreen** — page header, alternating service blocks with real shop imagery, capabilities `SpecList`, materials, ISO quality note, founder quote.
-- **AboutScreen** — origin story + second-generation hand-off, sticky proof rail and operating principles.
-- **ContactScreen** — working RFQ form (Input/Textarea, submit → confirmation), phone/email/address cards, after-hours note.
-- **SiteHeader / SiteFooter** — shared chrome with the logo, sticky nav, utility bar, phone.
+## What deploys
 
-## Run
-Open `index.html`. Nav between Home / Services / About / Contact is live; the contact form submits to a fake confirmation.
+The **root of this repo IS the live site.** These are served directly:
+
+```
+index.html                     Home
+about/                         About
+services/                      Services overview
+services/<service>/            7 service detail pages (with FAQ)
+careers/                       Careers + application form
+contact/                       Contact + RFQ form
+assets/                        Images and logos
+tokens/  styles.css  site.css  Design tokens + site styling
+robots.txt  sitemap.xml        SEO
+```
+
+## Editing content and pushing updates
+
+The pages above are **generated** — don't hand-edit them. Edit the source in
+`/src`, rebuild, and commit. The most common edits:
+
+- Service page copy, FAQs, service list → `src/servicesData.js`
+- Home / About / Careers / Contact copy → the matching `src/*Screen.jsx`
+- Header nav, footer → `src/SiteHeader.jsx`, `src/SiteFooter.jsx`
+
+Then regenerate and push:
+
+```
+cd src
+npm install        # first time only
+npm run build      # regenerates the HTML pages at the repo root
+cd ..
+git add -A && git commit -m "Update site content" && git push
+```
+
+The connected host redeploys automatically on push.
+
+## Before go-live — two things to set
+
+1. **Contact & Careers forms.** They POST to a Formspree placeholder
+   (`https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID`). Create a free form at
+   formspree.io and replace the ID in `src/build/_static.js`
+   (`window.FORM_ENDPOINT`), then rebuild. Until then, RFQ submissions are NOT
+   delivered — the phone number and address on the site still work.
+2. **Domain.** Canonical URLs and the sitemap use `https://www.damarkmfg.com`.
+   If the real domain differs, set it in `src/build/build.mjs` (`SITE_URL`) and
+   rebuild.
 
 ## Notes
-- Copy is lifted verbatim from the brand content where possible — keep the plain, direct voice if you extend it.
-- All imagery is real Damark shop photography from `assets/img/`.
-- Components are read from `window.DamarkManufacturingDesignSystem_70152b` after the bundle loads.
+
+- The "Ground to Sky" section on the home page used an empty image placeholder
+  in the original export; it now shows `assets/img/trak-dpm5.jpg`. Swap it in
+  `src/HomeScreen.jsx` if you want a different photo.
+- Fonts load from the design tokens; if a font is self-hosted or external,
+  it is referenced in `tokens/fonts.css`.

@@ -2,23 +2,14 @@
 const DS_SD = window.DamarkManufacturingDesignSystem_70152b;
 
 function FAQItem({ q, a }) {
-  const [open, setOpen] = React.useState(false);
   return (
-    <div style={{ borderBottom: '1px solid var(--border-subtle)' }}>
-      <button
-        onClick={() => setOpen((o) => !o)}
-        style={{
-          width: '100%', textAlign: 'left', background: 'none', border: 'none', cursor: 'pointer',
-          padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 20,
-        }}
-      >
+    <details style={{ borderBottom: '1px solid var(--border-subtle)' }} className="dm-faq">
+      <summary style={{ cursor: 'pointer', listStyle: 'none', padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 20 }}>
         <span style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 20, color: 'var(--text-strong)', textTransform: 'none', letterSpacing: 0 }}>{q}</span>
-        <span style={{ flex: 'none', width: 26, height: 26, display: 'grid', placeItems: 'center', color: 'var(--blue-600)', fontFamily: 'var(--font-mono)', fontSize: 22, lineHeight: 1, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 160ms ease' }}>+</span>
-      </button>
-      {open && (
-        <p style={{ margin: '0 0 22px', fontSize: 16, color: 'var(--text-body)', maxWidth: '74ch', paddingRight: 46 }}>{a}</p>
-      )}
-    </div>
+        <span className="dm-faq-plus" style={{ flex: 'none', width: 26, height: 26, display: 'grid', placeItems: 'center', color: 'var(--blue-600)', fontFamily: 'var(--font-mono)', fontSize: 22, lineHeight: 1, transition: 'transform 160ms ease' }}>+</span>
+      </summary>
+      <p style={{ margin: '0 0 22px', fontSize: 16, color: 'var(--text-body)', maxWidth: '74ch', paddingRight: 46 }}>{a}</p>
+    </details>
   );
 }
 
@@ -34,18 +25,18 @@ function ServiceDetailScreen({ go, slug }) {
     <main>
       {/* HERO */}
       <section style={{ position: 'relative', background: 'var(--steel-900)', color: '#fff', overflow: 'hidden' }}>
-        <img src={`./assets/img/${s.img}`} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
+        <img src={`/assets/img/${s.img}`} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(14,18,54,0.95) 0%, rgba(14,18,54,0.82) 45%, rgba(14,18,54,0.45) 100%)' }} />
         <div style={{ ...wrap, position: 'relative', padding: '64px 32px 60px' }}>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center', fontSize: 13, color: 'var(--steel-300)', fontFamily: 'var(--font-mono)', marginBottom: 18 }}>
-            <a href="#" onClick={(e) => { e.preventDefault(); go('services'); }} style={{ color: 'var(--chrome-cyan)', textDecoration: 'none' }}>Services</a>
+            <a href="/services/" style={{ color: 'var(--chrome-cyan)', textDecoration: 'none' }}>Services</a>
             <span>/</span><span>{s.nav}</span>
           </div>
           <SectionEyebrow color="var(--chrome-cyan)">{s.eyebrow}</SectionEyebrow>
           <h1 style={{ color: '#fff', margin: '14px 0 12px', fontSize: 'clamp(30px,4vw,52px)', maxWidth: '20ch' }}>{s.h1}</h1>
           <div style={{ display: 'flex', gap: 12, marginTop: 22, flexWrap: 'wrap' }}>
-            <Button variant="primary" size="lg" onClick={() => go('contact')}>Get a Quote →</Button>
-            <Button variant="secondary" size="lg" onClick={() => { window.location.href = 'tel:9202697825'; }} style={{ color: '#fff', borderColor: '#fff', backgroundColor: 'transparent', border: 'none' }}>Call (920) 269-7825</Button>
+            <window.LinkButton variant="primary" size="lg" href={window.href('contact')}>Get a Quote →</window.LinkButton>
+            <window.LinkButton variant="secondary" size="lg" href="tel:9202697825" style={{color: '#fff', borderColor: '#fff', backgroundColor: 'transparent', border: 'none'}}>Call (920) 269-7825</window.LinkButton>
           </div>
         </div>
       </section>
@@ -135,11 +126,11 @@ function ServiceDetailScreen({ go, slug }) {
         <h2 style={{ margin: '14px 0 24px' }}>Other Services</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
           {more.map((m) => (
-            <Card key={m.slug} accent="blue" interactive onClick={() => go('service:' + m.slug)}>
+            <a key={m.slug} href={window.href('service:' + m.slug)} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}><Card accent="blue" interactive>
               <h3 style={{ margin: '2px 0 8px', fontSize: 21 }}>{m.nav}</h3>
               <p style={{ margin: '0 0 12px', fontSize: 15, color: 'var(--text-muted)' }}>{m.card}</p>
               <span style={{ fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600, fontSize: 14, color: 'var(--blue-600)' }}>Learn More →</span>
-            </Card>
+            </Card></a>
           ))}
         </div>
       </section>
@@ -152,8 +143,8 @@ function ServiceDetailScreen({ go, slug }) {
             Send your print, your drawing, or a description of what you need. We'll review it and get back to you.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Button variant="primary" size="lg" onClick={() => go('contact')}>Email Your RFQ →</Button>
-            <Button variant="secondary" size="lg" onClick={() => { window.location.href = 'tel:9202697825'; }} style={{ color: '#fff', borderColor: 'var(--steel-500)', backgroundColor: 'transparent', border: 'none' }}>Call (920) 269-7825</Button>
+            <window.LinkButton variant="primary" size="lg" href={window.href('contact')}>Email Your RFQ →</window.LinkButton>
+            <window.LinkButton variant="secondary" size="lg" href="tel:9202697825" style={{color: '#fff', borderColor: 'var(--steel-500)', backgroundColor: 'transparent', border: 'none'}}>Call (920) 269-7825</window.LinkButton>
           </div>
         </div>
       </section>

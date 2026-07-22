@@ -27,22 +27,24 @@ function ContactScreen() {
       <section style={{ ...wrap, padding: '64px 24px', display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 48, alignItems: 'start' }}>
         {/* FORM */}
         <Card style={{ padding: 'var(--space-6)' }}>
-            <form action={window.FORM_ENDPOINT} method="POST" style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-              <input type="hidden" name="_subject" value="New RFQ from the Damark website" />
-              <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
-              <h2 style={{ margin: 0, fontSize: 'var(--display-sm)' }}>Request a Quote</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                <Input label="Name" name="name" required placeholder="Your name" />
-                <Input label="Company" name="company" placeholder="Company name" />
-                <Input label="Email" name="email" type="email" required placeholder="you@company.com" />
-                <Input label="Phone" name="phone" type="tel" placeholder="(000) 000-0000" />
-              </div>
-              <Textarea label="Describe the job" name="message" rows={5} required placeholder="Material, quantity, tolerances, deadline — or just describe what you need. Attach a print if you have one." />
-              <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-                <Button variant="primary" size="lg" type="submit">Email Your RFQ →</Button>
-                <span style={{ fontSize: 14, color: 'var(--text-muted)' }}>Reaches a real person — no automated reply.</span>
-              </div>
-            </form>
+            <iframe
+              src="https://link.thebbsagency.com/widget/form/oMI0X9YsA2BAY0S8T0Mk"
+              style={{ width: '100%', minHeight: 680, border: 'none', borderRadius: 8 }}
+              id="inline-oMI0X9YsA2BAY0S8T0Mk"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Request a Quote"
+              data-height="undefined"
+              data-layout-iframe-id="inline-oMI0X9YsA2BAY0S8T0Mk"
+              data-form-id="oMI0X9YsA2BAY0S8T0Mk"
+              title="Request a Quote"
+            ></iframe>
+            <script src="https://link.thebbsagency.com/js/form_embed.js"></script>
         </Card>
 
         {/* CONTACT INFO */}

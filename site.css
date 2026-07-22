@@ -20,6 +20,8 @@ body { margin: 0; background: #fff; }
 a.dm-card-link { transition: transform 120ms ease; }
 
 @media (max-width: 860px) {
+  /* Hide the top utility bar (address · family-owned · ISO-compliant) on mobile */
+  .page header > div:not(.dm-header-row) { display: none !important; }
   .dm-nav-desktop { display: none !important; }
   .dm-hamburger { display: inline-flex !important; }
   #dm-menu-toggle:checked ~ .dm-nav-mobile { display: flex !important; }

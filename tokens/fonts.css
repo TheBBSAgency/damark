@@ -1,0 +1,15 @@
+/* ============================================================
+   Damark Manufacturing — Webfonts
+   Loaded from Google Fonts. See readme.md (Visual Foundations).
+   SUBSTITUTION NOTE: Damark has no licensed brand typeface. These
+   are chosen to match the logo's condensed industrial wordmark and
+   the shop's plain, sturdy character. Swap for licensed/self-hosted
+   files in production.
+   ------------------------------------------------------------
+   Saira Condensed — display / signage headlines (matches the
+                     "MANUFACTURING CORPORATION" condensed wordmark)
+   Barlow          — body + UI (signage-rooted workhorse, warm)
+   IBM Plex Mono   — specs, part numbers, tolerances, dimensions
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500;600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');

@@ -1,0 +1,92 @@
+/* ============================================================
+   Damark Manufacturing — Color Tokens
+   Pulled from the logo (electric cobalt field, chrome/cyan
+   wordmark) and the shop itself: steel, concrete, machine blue,
+   safety amber. Plain and sturdy. No gradients in UI chrome.
+   ============================================================ */
+
+:root {
+  /* --- Damark Navy (brand) — the deep navy of the logo block & nav bar --- */
+  --blue-50:  #eef0f7;
+  --blue-100: #dadeed;
+  --blue-200: #b4bcda;
+  --blue-300: #8b96c2;
+  --blue-400: #5764a0;
+  --blue-500: #313c81;
+  --blue-600: #1d2675;   /* PRIMARY brand navy (#1D2675) */
+  --blue-700: #181f5e;
+  --blue-800: #131849;
+  --blue-900: #0e1236;
+
+  /* --- Steel (cool neutrals) — machines, gauges, dust --- */
+  --steel-50:  #f5f7f9;
+  --steel-100: #e9edf1;
+  --steel-200: #d4dae1;
+  --steel-300: #b2bcc7;
+  --steel-400: #8693a1;
+  --steel-500: #647183;
+  --steel-600: #4b5666;
+  --steel-700: #39424f;
+  --steel-800: #262d37;
+  --steel-900: #161b22;
+  --steel-950: #0d1015;
+
+  /* --- Brass / ochre (accent) — muted, used very sparingly like a rule --- */
+  --amber-50:  #f5f0e3;
+  --amber-300: #d9bd84;
+  --amber-400: #c8a256;
+  --amber-500: #b6892f;   /* ACCENT — muted brass, not vibrant */
+  --amber-600: #8f6a22;
+
+  /* --- Chrome / cyan — the logo wordmark's bevel highlight (decorative only) --- */
+  --chrome-light: #dff0ec;
+  --chrome-cyan:  #8fc4ba;
+  --chrome-mid:   #5f93a0;
+
+  /* --- Semantic raw (muted) --- */
+  --green-50:  #eaf2ec;
+  --green-500: #2f7d4f;   /* ISO / pass / in-spec */
+  --green-600: #235f3c;
+  --red-50:    #f6eae8;
+  --red-500:   #a83828;   /* fail / out-of-spec / stop */
+  --red-600:   #872c20;
+
+  /* ============ Semantic aliases ============ */
+
+  /* Surfaces */
+  --surface-page:    #ffffff;
+  --surface-muted:   var(--steel-50);
+  --surface-sunken:  var(--steel-100);
+  --surface-card:    #ffffff;
+  --surface-inverse: var(--steel-900);
+  --surface-brand:   var(--blue-600);
+  --surface-brand-dark: var(--blue-800);
+
+  /* Text */
+  --text-strong:  var(--steel-900);
+  --text-body:    var(--steel-700);
+  --text-muted:   var(--steel-500);
+  --text-faint:   var(--steel-400);
+  --text-inverse: #ffffff;
+  --text-brand:   var(--blue-600);
+  --text-on-brand: #ffffff;
+
+  /* Borders */
+  --border-subtle:  var(--steel-200);
+  --border-default: var(--steel-300);
+  --border-strong:  var(--steel-400);
+  --border-brand:   var(--blue-600);
+
+  /* Interactive / accent */
+  --accent:        var(--amber-500);
+  --accent-strong: var(--amber-600);
+  --focus-ring:    var(--blue-500);
+
+  /* Status */
+  --status-pass:    var(--green-500);
+  --status-pass-bg: var(--green-50);
+  --status-fail:    var(--red-500);
+  --status-fail-bg: var(--red-50);
+  --status-hold:    var(--amber-500);
+  --status-hold-bg: var(--amber-50);
+}

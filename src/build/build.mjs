@@ -3,6 +3,7 @@ import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 const require = createRequire(import.meta.url);
 const ReactDOMServer = require('react-dom/server');
 const React = require('react');
@@ -11,6 +12,18 @@ const SRC = resolve(__dirname, '..');          // repo/src
 const OUT = resolve(__dirname, '..', '..');    // repo root (served site)
 // ── CONFIG: set to the real production domain before go-live ──
 const SITE_URL = process.env.SITE_URL || 'https://www.damarkmfg.com';
+
+// Cache-busting: hash each linked stylesheet's contents at build time and append
+// it as ?v=<hash>. The version changes only when the CSS changes, so browsers
+// refetch on real updates and keep using cache otherwise. styles.css is hashed
+// together with the token files it @imports, so a token edit bumps it too.
+function assetVersion(relPaths){
+  const h = createHash('sha1');
+  for (const p of relPaths){ try { h.update(readFileSync(OUT + p)); } catch {} }
+  return h.digest('hex').slice(0, 8);
+}
+const STYLES_V = assetVersion(['/styles.css','/tokens/base.css','/tokens/colors.css','/tokens/effects.css','/tokens/fonts.css','/tokens/spacing.css','/tokens/typography.css']);
+const SITE_V = assetVersion(['/site.css']);
 
 const env = makeEnv(SRC);
 env.run(readFileSync(`${__dirname}/_static.js`,'utf8'), '_static.js');
@@ -46,8 +59,8 @@ function doc({title,desc,path,body,ogimg}){
 <meta property="og:image" content="${esc(img)}" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/assets/logo/damark-logo-navy.png" />
-<link rel="stylesheet" href="/styles.css" />
-<link rel="stylesheet" href="/site.css" />
+<link rel="stylesheet" href="/styles.css?v=${STYLES_V}" />
+<link rel="stylesheet" href="/site.css?v=${SITE_V}" />
 </head>
 <body>
 ${body}

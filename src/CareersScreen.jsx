@@ -111,32 +111,24 @@ function CareersScreen({ go }) {
             <p style={{ fontSize: 15, color: 'var(--blue-100)', margin: '4px 0 0' }}>Or stop by — Mon–Fri, 6:00 AM – 2:30 PM · 1015 Church Street, Lomira, WI</p>
           </div>
           <div style={{ background: '#fff', borderRadius: 'var(--radius-md)', padding: 'var(--space-6)' }}>
-              <form action={window.FORM_ENDPOINT} method="POST" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-                <input type="hidden" name="_subject" value="New Careers application from the Damark website" />
-                <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
-                <h2 style={{ margin: 0, fontSize: 'var(--display-sm)', color: 'var(--text-strong)' }}>Apply for a Position</h2>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
-                  <Input label="Full Name" name="name" required placeholder="Your name" />
-                  <Input label="Phone" name="phone" type="tel" required placeholder="(000) 000-0000" />
-                  <Input label="Email" name="email" type="email" required placeholder="you@email.com" />
-                  <Input label="Position of Interest" name="position" placeholder="CNC Machinist" />
-                </div>
-                <Textarea label="Anything you want us to know?" name="message" rows={4} placeholder="Anything that's not on your resume (optional)." />
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
-                  <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                    <span style={{ fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 'var(--text-sm)', textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-strong)' }}>Resume <span style={{ color: 'var(--status-fail)' }}>*</span></span>
-                    <input type="file" required accept=".pdf,.doc,.docx" style={{ fontFamily: 'var(--font-sans)', fontSize: 'var(--text-sm)', color: 'var(--text-body)', border: '1px solid var(--border-default)', borderRadius: 'var(--radius-sm)', padding: '10px 12px', background: 'var(--surface-page)', cursor: 'pointer' }} />
-                    <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>PDF or Word · max 10MB</span>
-                  </label>
-                  <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                    <span style={{ fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 'var(--text-sm)', textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-strong)' }}>Cover Letter <span style={{ color: 'var(--text-faint)', fontWeight: 600 }}>(optional)</span></span>
-                    <input type="file" accept=".pdf,.doc,.docx" style={{ fontFamily: 'var(--font-sans)', fontSize: 'var(--text-sm)', color: 'var(--text-body)', border: '1px solid var(--border-default)', borderRadius: 'var(--radius-sm)', padding: '10px 12px', background: 'var(--surface-page)', cursor: 'pointer' }} />
-                    <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>PDF or Word · max 10MB</span>
-                  </label>
-                </div>
-                <Button variant="primary" size="lg" type="submit">Submit Application →</Button>
-                <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>Reviewed by a real person.</span>
-              </form>
+                            <iframe
+                src="https://link.thebbsagency.com/widget/form/HZPniQsQ1Xion567Wubu"
+                style={{ width: '100%', minHeight: 838, border: 'none', borderRadius: 8 }}
+                id="inline-HZPniQsQ1Xion567Wubu"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Employment"
+                data-height="838"
+                data-layout-iframe-id="inline-HZPniQsQ1Xion567Wubu"
+                data-form-id="HZPniQsQ1Xion567Wubu"
+                title="Employment"
+              ></iframe>
+              <script src="https://link.thebbsagency.com/js/form_embed.js"></script>
           </div>
         </div>
       </section>

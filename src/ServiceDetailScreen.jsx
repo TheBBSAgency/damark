@@ -21,11 +21,35 @@ function ServiceDetailScreen({ go, slug }) {
   const idx = all.findIndex((x) => x.slug === s.slug);
   const more = all.filter((x) => x.slug !== s.slug).slice(0, 3);
 
+  // Contextual internal links: wrap the first occurrence of each configured
+  // phrase (once per page) in an in-sentence link to the related service.
+  const bodyLinks = s.bodyLinks || [];
+  const used = {};
+  function linkify(text) {
+    if (!bodyLinks.length || typeof text !== 'string') return text;
+    let parts = [text];
+    bodyLinks.forEach((ln, li) => {
+      if (used[ln.phrase]) return;
+      for (let i = 0; i < parts.length; i++) {
+        const seg = parts[i];
+        if (typeof seg !== 'string') continue;
+        const at = seg.indexOf(ln.phrase);
+        if (at >= 0) {
+          used[ln.phrase] = true;
+          const a = React.createElement('a', { key: 'bl' + li, href: window.href('service:' + ln.slug), style: { color: 'var(--blue-600)', fontWeight: 600, textDecoration: 'underline' } }, ln.phrase);
+          parts.splice(i, 1, seg.slice(0, at), a, seg.slice(at + ln.phrase.length));
+          break;
+        }
+      }
+    });
+    return parts;
+  }
+
   return (
     <main>
       {/* HERO */}
       <section style={{ position: 'relative', background: 'var(--steel-900)', color: '#fff', overflow: 'hidden' }}>
-        <img src={`/assets/img/${s.img}`} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
+        <img src={`/assets/img/${s.img}`} alt={s.imgAlt || s.nav} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(14,18,54,0.95) 0%, rgba(14,18,54,0.82) 45%, rgba(14,18,54,0.45) 100%)' }} />
         <div style={{ ...wrap, position: 'relative', padding: '64px 32px 60px' }}>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center', fontSize: 13, color: 'var(--steel-300)', fontFamily: 'var(--font-mono)', marginBottom: 18 }}>
@@ -47,7 +71,7 @@ function ServiceDetailScreen({ go, slug }) {
           <SectionEyebrow>Overview</SectionEyebrow>
           <h2 style={{ margin: '14px 0 18px' }}>{s.introTitle}</h2>
         </div>
-        {s.intro.map((p, i) => <p key={i} style={{ fontSize: 17.5, maxWidth: '74ch' }}>{p}</p>)}
+        {s.intro.map((p, i) => <p key={i} style={{ fontSize: 17.5, maxWidth: '74ch' }}>{linkify(p)}</p>)}
       </section>
 
       {/* WHAT WE DO */}
@@ -59,7 +83,7 @@ function ServiceDetailScreen({ go, slug }) {
             <Card key={t} accent="blue">
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--text-faint)' }}>{String(i + 1).padStart(2, '0')}</span>
               <h3 style={{ margin: '6px 0 8px', fontSize: 21 }}>{t}</h3>
-              <p style={{ margin: 0, fontSize: 15.5, color: 'var(--text-muted)' }}>{d}</p>
+              <p style={{ margin: 0, fontSize: 15.5, color: 'var(--text-muted)' }}>{linkify(d)}</p>
             </Card>
           ))}
         </div>
@@ -74,7 +98,7 @@ function ServiceDetailScreen({ go, slug }) {
             <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 14 }}>
               {s.who.map((w, i) => (
                 <li key={i} style={{ display: 'flex', gap: 12, fontSize: 16 }}>
-                  <span style={{ width: 16, height: 3, background: 'var(--amber-500)', flex: 'none', position: 'relative', top: 10 }} />{w}
+                  <span style={{ width: 16, height: 3, background: 'var(--amber-500)', flex: 'none', position: 'relative', top: 10 }} />{linkify(w)}
                 </li>
               ))}
             </ul>
@@ -103,7 +127,7 @@ function ServiceDetailScreen({ go, slug }) {
           <div>
             <SectionEyebrow>Why Damark</SectionEyebrow>
             <h2 style={{ margin: '14px 0 18px' }}>{s.whyTitle}</h2>
-            {s.why.map((p, i) => <p key={i} style={{ fontSize: 16.5 }}>{p}</p>)}
+            {s.why.map((p, i) => <p key={i} style={{ fontSize: 16.5 }}>{linkify(p)}</p>)}
           </div>
           <PullQuote name={s.quote[1]} title={s.quote[2]} tone="dark">{s.quote[0]}</PullQuote>
         </div>

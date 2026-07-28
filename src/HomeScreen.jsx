@@ -23,13 +23,16 @@ function HomeScreen({ go, tweaks = {} }) {
     <main>
       {/* HERO */}
       <section style={{ position: 'relative', background: 'var(--steel-900)', color: '#fff', overflow: 'hidden' }}>
-        <img src="/assets/img/production-floor-panoramic.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.34 }} />
+        <img src="/assets/img/production-floor-panoramic.jpg" alt="Wide view of the Damark Manufacturing machine shop floor in Lomira, WI, with CNC machining centers and lathes" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.34 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(14,18,54,0.94) 0%, rgba(14,18,54,0.78) 42%, rgba(14,18,54,0.34) 100%)', opacity: heroOverlay }} />
         <div style={{ ...wrap, position: 'relative', padding: '104px 32px 96px' }}>
           <SectionEyebrow color="var(--chrome-cyan)">Precision Machining · Lomira, Wisconsin</SectionEyebrow>
-          <h1 style={{ fontSize: 'clamp(38px, 5.2vw, 68px)', lineHeight: 1.0, margin: '18px 0 20px', color: '#fff', maxWidth: '17ch', textTransform: 'uppercase' }}>
-            Production Work Done Right
+          <h1 style={{ fontSize: 'clamp(34px, 4.8vw, 60px)', lineHeight: 1.03, margin: '18px 0 10px', color: '#fff', maxWidth: '20ch', textTransform: 'uppercase' }}>
+            Precision Machining &amp; Production Work in Lomira, WI
           </h1>
+          <p style={{ fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 700, fontSize: 'clamp(17px, 2vw, 22px)', color: 'var(--chrome-cyan)', margin: '0 0 20px' }}>
+            Production Work Done Right
+          </p>
           <p style={{ fontSize: 19, maxWidth: '56ch', color: 'var(--steel-200)', margin: '0 0 12px', lineHeight: 1.55 }}>
             A full-service precision machine shop. We machine parts from small-batch one-offs to production runs, build fixtures and tooling, prototype new ideas, and reverse-engineer parts that don't exist anymore.
           </p>
@@ -40,6 +43,15 @@ function HomeScreen({ go, tweaks = {} }) {
             <window.LinkButton variant="primary" size="lg" href={window.href('contact')}>Get a Quote →</window.LinkButton>
             <window.LinkButton variant="secondary" size="lg" href="tel:9202697825" style={{color: '#fff', backgroundColor: 'transparent', border: 'none'}}>Call (920) 269-7825</window.LinkButton>
           </div>
+        </div>
+      </section>
+
+      {/* INTRO — keyword-aware lead paragraph with contextual links */}
+      <section style={{ background: '#fff' }}>
+        <div style={{ ...wrap, padding: '44px 32px 8px', maxWidth: 1000 }}>
+          <p style={{ fontSize: 19, lineHeight: 1.6, color: 'var(--text-body)', margin: 0 }}>
+            Damark Manufacturing is a family-owned <strong>precision machine shop in Lomira, WI</strong>, running everything from a single part to a full production program. Under one roof we handle <a href={window.href('service:cnc-precision-machining')} style={{ color: 'var(--blue-600)', fontWeight: 600 }}>CNC precision machining</a>, custom <a href={window.href('service:fixturing-tooling')} style={{ color: 'var(--blue-600)', fontWeight: 600 }}>fixturing and tooling</a>, prototyping, and <a href={window.href('service:reverse-engineering')} style={{ color: 'var(--blue-600)', fontWeight: 600 }}>reverse engineering</a> for parts that don't exist anymore — the kind of precision machining most shops send out.
+          </p>
         </div>
       </section>
 
@@ -112,7 +124,7 @@ function HomeScreen({ go, tweaks = {} }) {
       <section style={{ ...wrap, padding: '88px 32px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
           <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-            <img src="/assets/img/trak-dpm5.jpg" alt="Precision machining on the Damark shop floor" style={{ display: 'block', width: '100%', height: '440px', objectFit: 'cover' }} />
+            <img src="/assets/img/trak-dpm5.jpg" alt="TRAK DPM5 CNC bed mill on the Damark Manufacturing shop floor in Lomira, WI" style={{ display: 'block', width: '100%', height: '440px', objectFit: 'cover' }} />
           </div>
           <div>
             <SectionEyebrow>Ground to Sky</SectionEyebrow>
@@ -139,7 +151,7 @@ function HomeScreen({ go, tweaks = {} }) {
             <window.LinkButton variant="secondary" href={window.href('about')} style={{color: '#fff', backgroundColor: '#1D2675', border: 'none', marginTop: 8}}>Learn More About Damark →</window.LinkButton>
           </div>
           <div style={{ border: '1px solid var(--blue-800)', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
-            <img src="/assets/img/hq-lomira.jpg" alt="Damark HQ in Lomira, WI" style={{ width: '100%', display: 'block' }} />
+            <img src="/assets/img/hq-lomira.jpg" alt="Damark Manufacturing headquarters building in Lomira, WI" style={{ width: '100%', display: 'block' }} />
           </div>
         </div>
       </section>

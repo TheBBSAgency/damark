@@ -25,7 +25,7 @@ function CareersScreen({ go }) {
     <main>
       {/* HERO */}
       <section style={{ position: 'relative', background: 'var(--steel-900)', color: '#fff', overflow: 'hidden' }}>
-        <img src="/assets/img/production-floor-panoramic.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
+        <img src="/assets/img/production-floor-panoramic.jpg" alt="The Damark Manufacturing production floor in Lomira, WI, where CNC machinists work" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(14,18,54,0.94), rgba(14,18,54,0.55))' }} />
         <div style={{ ...wrap, position: 'relative', padding: '76px 32px 68px' }}>
           <SectionEyebrow color="var(--chrome-cyan)">Careers</SectionEyebrow>

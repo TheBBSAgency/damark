@@ -1,0 +1,18 @@
+# Damark Manufacturing
+
+> Family-owned precision machine shop in Lomira, WI since 1995. CNC machining, fixturing and tooling, prototyping, reverse engineering, and fabrication and welding — one part or a thousand, done right.
+
+## Services
+- [CNC Precision Machining](https://www.damarkmfg.com/services/cnc-precision-machining/): High-tolerance milling, turning, and production runs — including horizontal machining centers with pallet changers.
+- [Fixturing & Tooling](https://www.damarkmfg.com/services/fixturing-tooling/): Weld fixtures, machining fixtures, robotic tooling, and hydraulic clamping. Designed in-house in SolidWorks.
+- [Prototyping](https://www.damarkmfg.com/services/prototyping/): Got an idea on paper or in your head? We help you get it made, tested, and refined before production.
+- [Reverse Engineering](https://www.damarkmfg.com/services/reverse-engineering/): Part discontinued? We measure it, model it in SolidWorks, and manufacture a replacement.
+- [Fabrication & Welding](https://www.damarkmfg.com/services/fabrication-welding/): Structural fabrication, custom assemblies, weld fixtures, and repair work — all in-house.
+- [Outsourced Machining for Shops](https://www.damarkmfg.com/services/shop-to-shop/): Overflow, specialty, and hard-to-fit machining for other shops. We protect your customer relationships.
+- [Emergency & After-Hours](https://www.damarkmfg.com/services/emergency-support/): Line down on a Saturday? Existing customers can reach us. Call us and you get a person.
+
+## Company
+- [About](https://www.damarkmfg.com/about/): Family-owned since 1995, second-generation ownership. Thirty years of precision machining in Lomira, WI.
+- [Services Overview](https://www.damarkmfg.com/services/): Full-service precision machine shop — machining, tooling, prototyping, reverse engineering, and fabrication under one roof.
+- [Careers](https://www.damarkmfg.com/careers/): CNC machinist and shop roles in Lomira, WI. Monday–Friday, 6:00 AM–2:30 PM.
+- [Contact](https://www.damarkmfg.com/contact/): Request a machining quote — 1015 Church Street, Lomira, WI 53048 · (920) 269-7825.

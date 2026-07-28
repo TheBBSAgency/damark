@@ -19,6 +19,12 @@ body { margin: 0; background: #fff; }
 .dm-faq[open] .dm-faq-plus { transform: rotate(45deg); }
 a.dm-card-link { transition: transform 120ms ease; }
 
+/* --- desktop Services dropdown (CSS-only, reveals on hover/focus) --- */
+.dm-submenu { transition: opacity 120ms ease; }
+.dm-navitem-drop:hover .dm-submenu,
+.dm-navitem-drop:focus-within .dm-submenu { display: block !important; }
+.dm-submenu-link:hover { background: var(--surface-muted); color: var(--blue-600) !important; }
+
 @media (max-width: 860px) {
   /* Hide the top utility bar (address · family-owned · ISO-compliant) on mobile */
   .page header > div:not(.dm-header-row) { display: none !important; }

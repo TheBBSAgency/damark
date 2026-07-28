@@ -4,6 +4,15 @@ const DS = window.DamarkManufacturingDesignSystem_70152b;
 function SiteHeader({ route }) {
   const LinkButton = window.LinkButton;
   const nav = [['home', 'Home'], ['about', 'About'], ['services', 'Services'], ['careers', 'Careers'], ['contact', 'Contact']];
+  const services = [
+    ['cnc-precision-machining', 'CNC Precision Machining'],
+    ['fixturing-tooling', 'Fixturing & Tooling'],
+    ['prototyping', 'Prototyping'],
+    ['reverse-engineering', 'Reverse Engineering'],
+    ['fabrication-welding', 'Fabrication & Welding'],
+    ['shop-to-shop', 'Outsourced Machining for Shops'],
+    ['emergency-support', 'Emergency & After-Hours'],
+  ];
   return (
     <header style={{ position: 'sticky', top: 0, zIndex: 30, background: '#fff', boxShadow: '0 1px 0 var(--border-subtle)' }}>
       <input type="checkbox" id="dm-menu-toggle" className="dm-menu-cb" aria-label="Open menu" />
@@ -28,20 +37,47 @@ function SiteHeader({ route }) {
           <span className="dm-ham-bar" /><span className="dm-ham-bar" /><span className="dm-ham-bar" />
         </label>
         <nav className="dm-nav-desktop" style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 2 }}>
-          {nav.map(([id, label]) => (
-            <a key={id} href={window.href(id)} className={route === id ? 'dm-navlink dm-navlink-active' : 'dm-navlink'}
-              style={{ fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600, fontSize: 16, padding: '10px 13px', textDecoration: 'none', color: route === id ? 'var(--blue-600)' : 'var(--text-strong)', borderBottom: route === id ? '3px solid var(--blue-600)' : '3px solid transparent' }}>{label}</a>
-          ))}
+          {nav.map(([id, label]) => {
+            const navStyle = { fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600, fontSize: 16, padding: '10px 13px', textDecoration: 'none', color: route === id ? 'var(--blue-600)' : 'var(--text-strong)', borderBottom: route === id ? '3px solid var(--blue-600)' : '3px solid transparent' };
+            const cls = route === id ? 'dm-navlink dm-navlink-active' : 'dm-navlink';
+            if (id === 'services') {
+              return (
+                <span key={id} className="dm-navitem-drop" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
+                  <a href={window.href(id)} className={cls} style={navStyle}>{label} <span aria-hidden="true" style={{ fontSize: 11 }}>▾</span></a>
+                  <div className="dm-submenu" style={{ display: 'none', position: 'absolute', top: '100%', left: 0, minWidth: 248, background: '#fff', border: '1px solid var(--border-subtle)', borderTop: '3px solid var(--blue-600)', boxShadow: 'var(--shadow-lg)', borderRadius: 'var(--radius-sm)', paddingTop: 6, paddingBottom: 6 }}>
+                    {services.map(([slug, slabel]) => (
+                      <a key={slug} href={window.href('service:' + slug)} className="dm-submenu-link" style={{ display: 'block', padding: '9px 18px', fontFamily: 'var(--font-sans)', fontSize: 15, fontWeight: 500, color: 'var(--text-body)', textDecoration: 'none', whiteSpace: 'nowrap' }}>{slabel}</a>
+                    ))}
+                  </div>
+                </span>
+              );
+            }
+            return (
+              <a key={id} href={window.href(id)} className={cls} style={navStyle}>{label}</a>
+            );
+          })}
           <a href="tel:9202697825" style={{ fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--text-strong)', textDecoration: 'none', fontSize: 15, margin: '0 14px' }}>(920) 269-7825</a>
           <LinkButton variant="primary" href={window.href('contact')}>Get a Quote</LinkButton>
         </nav>
       </div>
       {/* mobile dropdown — toggled purely by CSS via the checkbox above */}
       <nav className="dm-nav-mobile" style={{ borderTop: '1px solid var(--border-subtle)', padding: '8px 10px 16px', flexDirection: 'column' }}>
-        {nav.map(([id, label]) => (
-          <a key={id} href={window.href(id)}
-            style={{ fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600, fontSize: 17, padding: '13px 8px', textDecoration: 'none', color: route === id ? 'var(--blue-600)' : 'var(--text-strong)', borderBottom: '1px solid var(--border-subtle)' }}>{label}</a>
-        ))}
+        {nav.map(([id, label]) => {
+          const mLink = { fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600, fontSize: 17, padding: '13px 8px', textDecoration: 'none', color: route === id ? 'var(--blue-600)' : 'var(--text-strong)', borderBottom: '1px solid var(--border-subtle)' };
+          if (id === 'services') {
+            return (
+              <React.Fragment key={id}>
+                <a href={window.href(id)} style={mLink}>{label}</a>
+                {services.map(([slug, slabel]) => (
+                  <a key={slug} href={window.href('service:' + slug)} style={{ fontFamily: 'var(--font-sans)', fontWeight: 500, fontSize: 15, padding: '11px 8px 11px 22px', textDecoration: 'none', color: 'var(--text-body)', borderBottom: '1px solid var(--border-subtle)' }}>{slabel}</a>
+                ))}
+              </React.Fragment>
+            );
+          }
+          return (
+            <a key={id} href={window.href(id)} style={mLink}>{label}</a>
+          );
+        })}
         <a href="tel:9202697825" style={{ fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--text-strong)', textDecoration: 'none', fontSize: 16, padding: '13px 8px' }}>(920) 269-7825</a>
         <div style={{ marginTop: 10 }}>
           <LinkButton variant="primary" href={window.href('contact')} style={{ width: '100%' }}>Get a Quote</LinkButton>

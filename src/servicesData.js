@@ -143,7 +143,7 @@ window.DAMARK_SERVICES = [
       "Prototyping customers tend to come back for one reason: they got honest feedback, the part was made right, and when it needed to change, the process wasn\u2019t painful.",
       "We\u2019ve made prototype parts for independent inventors working out of garages, for product designers at established manufacturers, and for engineers who needed a part made fast because something in the field was broken.",
     ],
-    quote: ['There\u2019s a guy building a corn grinder. He\u2019s been here two or three times. Comes in with his sketch and we work through it with him.', 'Brock Buerger', 'Owner'],
+    quote: ['There\u2019s a client building a custom tool. He\u2019s been here two or three times. Comes in with his sketch and we work through it with him.', 'Brock Buerger', 'Owner'],
     faq: [
       ['Do I need a complete print to get a prototype made?', 'No. We work from full SolidWorks models, PDF drawings, hand sketches, physical samples, and verbal descriptions. Lack of a formal print isn\u2019t a barrier to getting started. Contact us and tell us what you have.'],
       ['Can Damark help with the design, or just the machining?', 'Both. If you have an idea but not a design, we can model it in SolidWorks and work through it with you. We\u2019re not a pure design firm, but we\u2019re not going to machine something we can see is going to fail either.'],
@@ -167,7 +167,7 @@ window.DAMARK_SERVICES = [
     ],
     whatTitle: 'What Reverse Engineering at Damark Covers',
     what: [
-      ['Part Measurement & Documentation', 'We measure the physical part using precision inspection equipment, including 3D scanning. We document geometry, material characteristics, and surface finish or tolerance requirements.'],
+      ['Part Measurement & Documentation', 'We measure the physical part using precision inspection equipment. We document geometry, material characteristics, and surface finish or tolerance requirements.'],
       ['SolidWorks Modeling', 'We build a full 3D model in SolidWorks. This becomes the basis for the manufacturing drawing and the production routing for future orders.'],
       ['Manufacturing Drawing Production', 'A complete engineering drawing from the model: a real print, with tolerances, material callouts, and surface finish specs. You own that drawing.'],
       ['Replacement Part Manufacturing', 'We don\u2019t just document. The measurement, modeling, and manufacturing all happen at Damark.'],
@@ -183,7 +183,7 @@ window.DAMARK_SERVICES = [
     processTitle: 'How the Process Works',
     process: [
       ['You bring us the part', 'Ship it or drop it off. If it can\u2019t be removed from the equipment, we may be able to work from photographs and field measurements.'],
-      ['We measure and evaluate it', 'Using precision measuring equipment and 3D scanning to capture the geometry. We also evaluate condition: what\u2019s worn, what\u2019s damaged, what the original dimensions likely were.'],
+      ['We measure and evaluate it', 'Using precision measuring equipment to capture the geometry. We also evaluate condition: what\u2019s worn, what\u2019s damaged, what the original dimensions likely were.'],
       ['We model it and produce a drawing', 'The model and drawing give us a repeatable manufacturing baseline. You get a copy of the drawing.'],
       ['We quote the replacement', 'We\u2019ll give you a price for the first piece and, if you want, a small stock quantity so you\u2019re not in the same situation six months from now.'],
       ['We machine and deliver', 'Made in-house, inspected before it ships.'],
@@ -217,7 +217,6 @@ window.DAMARK_SERVICES = [
     ],
     whatTitle: 'What Our Fabrication and Welding Services Cover',
     what: [
-      ['Custom Structural Fabrication', 'Frames, brackets, supports, enclosures, and structural components built to your drawings. We work from customer prints or develop the design in-house for simpler assemblies.'],
       ['Custom Weld Assemblies', 'From simple brackets to multi-component structures. If the weldment also requires machined surfaces, bores, or features, we handle that in-house without shipping it out.'],
       ['Weld Fixture Fabrication', 'Fixtures for your welding operations, designed and built to hold your parts in position during the weld cycle.'],
       ['Fabrication Repair & Modification', 'Existing assemblies that are worn, cracked, broken, or need modification for a new application. We evaluate, repair or rebuild, and return it ready to use.'],
@@ -244,7 +243,6 @@ window.DAMARK_SERVICES = [
     quote: ['We started in fabrication and repair. That\u2019s the foundation everything else was built on.', 'Dave Buerger', 'Founder'],
     faq: [
       ['What materials do you weld?', 'We weld mild steel, stainless steel, and aluminum. If you have a specific material requirement, let us know upfront.'],
-      ['Do you handle structural welding for load-bearing applications?', 'Contact us with your application. We can discuss what the weldment needs to do and whether our capability and process documentation meet your requirements.'],
       ['Can you fabricate from my drawings, or do you need to design the assembly?', 'Both. We regularly fabricate from customer-supplied drawings. For simpler assemblies, we can develop a design in-house, particularly when the assembly will have machined features.'],
       ['Do you offer repair work on existing fabricated assemblies?', 'Yes. Bring in the assembly or describe what\u2019s wrong. In many cases a worn or cracked assembly can be repaired and reconditioned for significantly less than building new.'],
       ['Can you handle the machining on a welded assembly without me finding a separate machine shop?', 'Yes \u2014 that\u2019s specifically one of the things we do well. Welded assemblies that require machined bores, faced surfaces, drilled patterns, or other features are handled in-house start to finish.'],

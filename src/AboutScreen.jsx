@@ -24,11 +24,11 @@ function AboutScreen({ go }) {
     <main>
       {/* HERO */}
       <section style={{ position: 'relative', background: 'var(--steel-900)', color: '#fff', overflow: 'hidden' }}>
-        <img src="/assets/img/welding.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.26 }} />
+        <img src="/assets/img/welding.jpg" alt="Welder at work on the Damark Manufacturing shop floor in Lomira, WI" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.26 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(14,18,54,0.94), rgba(14,18,54,0.6))' }} />
         <div style={{ ...wrap, position: 'relative', padding: '76px 32px 68px' }}>
           <SectionEyebrow color="var(--chrome-cyan)">About Damark</SectionEyebrow>
-          <h1 style={{ color: '#fff', margin: '14px 0 14px', fontSize: 'clamp(32px,4.4vw,56px)', maxWidth: '20ch' }}>Thirty Years of Honest Work</h1>
+          <h1 style={{ color: '#fff', margin: '14px 0 14px', fontSize: 'clamp(30px,4.2vw,52px)', maxWidth: '22ch' }}>Precision Machine Shop in Lomira, WI — 30 Years of Honest Work</h1>
           <p style={{ fontSize: 19, color: 'var(--steel-200)', maxWidth: '58ch' }}>
             Family-owned since 1995. No sales team, no runaround — just straight talk and work done right. Here's how we operate, and why our customers keep coming back.
           </p>
@@ -118,7 +118,7 @@ function AboutScreen({ go }) {
           </div>
           <div style={{ position: 'sticky', top: 116, display: 'flex', flexDirection: 'column', gap: 20 }}>
             <div style={{ border: '1px solid var(--blue-800)', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
-              <img src="/assets/img/hq-lomira.jpg" alt="Damark HQ, Lomira WI" style={{ width: '100%', display: 'block' }} />
+              <img src="/assets/img/hq-lomira.jpg" alt="Damark Manufacturing headquarters building in Lomira, WI" style={{ width: '100%', display: 'block' }} />
             </div>
             <PullQuote name="Dave Buerger" title="Founder" tone="brand">
               Everybody was betting against me. They were taking bets on how soon I'd be out.
@@ -131,7 +131,7 @@ function AboutScreen({ go }) {
       <section style={{ ...wrap, padding: '80px 32px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 56, alignItems: 'start' }}>
           <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-            <img src="/assets/img/precision-machining.jpg" alt="On the Damark floor" style={{ width: '100%', display: 'block' }} />
+            <img src="/assets/img/precision-machining.jpg" alt="Damark machinist operating a CNC lathe in the Lomira, WI machine shop" style={{ width: '100%', display: 'block' }} />
           </div>
           <div>
             <SectionEyebrow>The Next Generation</SectionEyebrow>

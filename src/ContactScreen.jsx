@@ -60,16 +60,34 @@ function ContactScreen() {
           </Card>
           <Card>
             <SectionEyebrow>Shop</SectionEyebrow>
-            <p style={{ margin: '8px 0 0', fontSize: 16, color: 'var(--text-body)' }}>1015 Church Street<br/>Lomira, WI 53048</p>
+            <p style={{ margin: '8px 0 0', fontSize: 16, color: 'var(--text-body)' }}>1015 Church St<br/>Lomira, WI 53048</p>
             <div style={{ marginTop: 12, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               <Badge tone="iso">ISO Compliant</Badge>
               <Badge tone="neutral">Family-Owned · 1995</Badge>
             </div>
           </Card>
+          <Card>
+            <SectionEyebrow>Hours</SectionEyebrow>
+            <p style={{ margin: '8px 0 0', fontSize: 16, color: 'var(--text-body)' }}>Monday–Friday<br/>6:00 AM – 2:30 PM</p>
+            <p style={{ margin: '6px 0 0', fontSize: 14, color: 'var(--text-muted)' }}>Existing customers can reach us after hours when a line is down.</p>
+          </Card>
           <div style={{ background: 'var(--amber-50)', border: '1px solid #f5dca0', borderRadius: 'var(--radius-md)', padding: 'var(--space-5)' }}>
             <strong style={{ display: 'block', marginBottom: 4 }}>Line down after hours?</strong>
             <span style={{ fontSize: 15, color: 'var(--text-body)' }}>Existing customers can reach us when something goes wrong. Call us — we'll do what we can to get you back up.</span>
           </div>
+        </div>
+      </section>
+
+      {/* MAP */}
+      <section style={{ ...wrap, padding: '8px 24px 8px' }}>
+        <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-md)' }}>
+          <iframe
+            title="Map to Damark Manufacturing, 1015 Church St, Lomira, WI 53048"
+            src="https://www.google.com/maps?q=1015%20Church%20St%2C%20Lomira%2C%20WI%2053048&output=embed"
+            style={{ width: '100%', height: 360, border: 0, display: 'block' }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </section>
 

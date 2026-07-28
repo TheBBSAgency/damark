@@ -18,7 +18,7 @@ function ServicesScreen({ go }) {
     <main>
       {/* PAGE HEADER */}
       <section style={{ position: 'relative', background: 'var(--steel-900)', color: '#fff', overflow: 'hidden' }}>
-        <img src="/assets/img/precision-machining.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
+        <img src="/assets/img/precision-machining.jpg" alt="Damark machinist running a CNC lathe in the Lomira, WI machine shop" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(14,18,54,0.95) 0%, rgba(14,18,54,0.8) 48%, rgba(14,18,54,0.4) 100%)' }} />
         <div style={{ ...wrap, position: 'relative', padding: '72px 32px 64px' }}>
           <SectionEyebrow color="var(--chrome-cyan)">Services</SectionEyebrow>
@@ -52,7 +52,7 @@ function ServicesScreen({ go }) {
         {services.map((s, i) => (
           <div key={s.slug} style={{ display: 'grid', gridTemplateColumns: i % 2 ? '1fr 1.1fr' : '1.1fr 1fr', gap: 44, alignItems: 'center' }}>
             <div style={{ order: i % 2 ? 2 : 1, borderRadius: 'var(--radius-md)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-              <img src={`/assets/img/${s.img}`} alt={s.nav} style={{ width: '100%', height: 300, objectFit: 'cover', display: 'block' }} />
+              <img src={`/assets/img/${s.img}`} alt={s.imgAlt || s.nav} style={{ width: '100%', height: 300, objectFit: 'cover', display: 'block' }} />
             </div>
             <div style={{ order: i % 2 ? 1 : 2 }}>
               <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-faint)', fontSize: 14 }}>{String(i + 1).padStart(2, '0')}</span>

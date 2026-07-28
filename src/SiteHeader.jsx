@@ -20,7 +20,7 @@ function SiteHeader({ route }) {
       <div style={{ background: 'var(--blue-600)', color: 'rgba(255,255,255,0.85)' }}>
         <div style={{ maxWidth: 1240, margin: '0 auto', padding: '7px 32px', display: 'flex', justifyContent: 'space-between', gap: 16, fontSize: 13, fontFamily: 'var(--font-sans)' }}>
           <span style={{ display: 'flex', gap: 18 }}>
-            <span>1015 Church Street · Lomira, WI 53048</span>
+            <span>1015 Church St · Lomira, WI 53048</span>
             <span style={{ opacity: 0.6 }}>·</span>
             <span>Family-Owned Since 1995</span>
           </span>

@@ -25,7 +25,7 @@ function CareersScreen({ go }) {
     <main>
       {/* HERO */}
       <section style={{ position: 'relative', background: 'var(--steel-900)', color: '#fff', overflow: 'hidden' }}>
-        <img src="/assets/img/production-floor-panoramic.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
+        <img src="/assets/img/production-floor-panoramic.jpg" alt="The Damark Manufacturing production floor in Lomira, WI, where CNC machinists work" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(14,18,54,0.94), rgba(14,18,54,0.55))' }} />
         <div style={{ ...wrap, position: 'relative', padding: '76px 32px 68px' }}>
           <SectionEyebrow color="var(--chrome-cyan)">Careers</SectionEyebrow>
@@ -108,7 +108,7 @@ function CareersScreen({ go }) {
             </p>
             <p style={{ fontSize: 16, color: '#fff', fontWeight: 600, marginTop: 18 }}>Questions before you apply?</p>
             <a href="tel:9202697825" style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 28, color: '#fff', textDecoration: 'none' }}>(920) 269-7825</a>
-            <p style={{ fontSize: 15, color: 'var(--blue-100)', margin: '4px 0 0' }}>Or stop by — Mon–Fri, 6:00 AM – 2:30 PM · 1015 Church Street, Lomira, WI</p>
+            <p style={{ fontSize: 15, color: 'var(--blue-100)', margin: '4px 0 0' }}>Or stop by — Mon–Fri, 6:00 AM – 2:30 PM · 1015 Church St, Lomira, WI</p>
           </div>
           <div style={{ background: '#fff', borderRadius: 'var(--radius-md)', padding: 'var(--space-6)' }}>
                             <iframe

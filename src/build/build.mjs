@@ -40,10 +40,9 @@ const esc = s => String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(
 // point at the same domain. Flip SITE_URL (top of file / env) and everything moves together.
 const BASE = SITE_URL.replace(/\/+$/,'');
 const jsonld = obj => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g,'\\u003c')}</script>`;
-// TODO(geo): fill from the VERIFIED Google Business Profile pin for
-// 1015 Church Street, Lomira, WI 53048, then set GEO below. Left null on purpose
-// so no unverified coordinates ship. (Address-level approx, UNVERIFIED: 43.5933, -88.4459)
-const GEO = null; // e.g. { lat: '43.5933', lng: '-88.4459' }
+// Geo coordinates from the verified Google Business Profile pin for
+// 1015 Church St, Lomira, WI 53048 (confirmed by owner, 2026-07-28).
+const GEO = { lat: '43.58718275171335', lng: '-88.44742707300928' };
 function localBusinessLD(){
   const b = {
     "@context":"https://schema.org",
@@ -55,7 +54,7 @@ function localBusinessLD(){
     "telephone":"+1-920-269-7825",
     "image": BASE + "/assets/img/production-floor-panoramic.jpg",
     "logo": BASE + "/assets/logo/damark-logo-2026.png",
-    "address":{"@type":"PostalAddress","streetAddress":"1015 Church Street","addressLocality":"Lomira","addressRegion":"WI","postalCode":"53048","addressCountry":"US"},
+    "address":{"@type":"PostalAddress","streetAddress":"1015 Church St","addressLocality":"Lomira","addressRegion":"WI","postalCode":"53048","addressCountry":"US"},
     "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"06:00","closes":"14:30"}],
     "foundingDate":"1995",
     "areaServed":["Lomira WI","Fond du Lac County","Dodge County","Fox Valley","Milwaukee metro area"]
@@ -158,6 +157,6 @@ const llms = `# Damark Manufacturing\n\n> Family-owned precision machine shop in
   `- [About](${BASE}/about/): Family-owned since 1995, second-generation ownership. Thirty years of precision machining in Lomira, WI.\n`+
   `- [Services Overview](${BASE}/services/): Full-service precision machine shop — machining, tooling, prototyping, reverse engineering, and fabrication under one roof.\n`+
   `- [Careers](${BASE}/careers/): CNC machinist and shop roles in Lomira, WI. Monday–Friday, 6:00 AM–2:30 PM.\n`+
-  `- [Contact](${BASE}/contact/): Request a machining quote — 1015 Church Street, Lomira, WI 53048 · (920) 269-7825.\n`;
+  `- [Contact](${BASE}/contact/): Request a machining quote — 1015 Church St, Lomira, WI 53048 · (920) 269-7825.\n`;
 writeFileSync(`${OUT}/llms.txt`, llms);
 console.log('Built '+n+' pages -> '+OUT);

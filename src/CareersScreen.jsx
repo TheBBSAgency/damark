@@ -108,7 +108,7 @@ function CareersScreen({ go }) {
             </p>
             <p style={{ fontSize: 16, color: '#fff', fontWeight: 600, marginTop: 18 }}>Questions before you apply?</p>
             <a href="tel:9202697825" style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 28, color: '#fff', textDecoration: 'none' }}>(920) 269-7825</a>
-            <p style={{ fontSize: 15, color: 'var(--blue-100)', margin: '4px 0 0' }}>Or stop by — Mon–Fri, 6:00 AM – 2:30 PM · 1015 Church Street, Lomira, WI</p>
+            <p style={{ fontSize: 15, color: 'var(--blue-100)', margin: '4px 0 0' }}>Or stop by — Mon–Fri, 6:00 AM – 2:30 PM · 1015 Church St, Lomira, WI</p>
           </div>
           <div style={{ background: '#fff', borderRadius: 'var(--radius-md)', padding: 'var(--space-6)' }}>
                             <iframe

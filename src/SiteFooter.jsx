@@ -34,7 +34,7 @@ function SiteFooter({ go }) {
           <div style={head}>Reach a Person</div>
           <a style={{ ...link, fontFamily: 'var(--font-mono)' }} href="tel:9202697825">(920) 269-7825</a>
           <a style={link} href={window.href('contact')}>Contact Us →</a>
-          <span style={{ fontSize: 15, color: 'var(--steel-400)' }}>1015 Church Street<br/>Lomira, WI 53048</span>
+          <span style={{ fontSize: 15, color: 'var(--steel-400)' }}>1015 Church St<br/>Lomira, WI 53048</span>
         </div>
       </div>
       <div style={{ borderTop: '1px solid var(--steel-800)' }}>

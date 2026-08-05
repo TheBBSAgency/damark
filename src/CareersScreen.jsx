@@ -17,7 +17,7 @@ function CareersScreen({ go }) {
     ['You\u2019re mechanically inclined', 'You understand how things go together and come apart. You think in three dimensions. You don\u2019t need everything spelled out for you.'],
     ['You\u2019re self-directed', 'We\u2019ll give you the job. We trust you to get it done. We\u2019re not going to stand over you, but we expect you to come back when something doesn\u2019t look right.'],
     ['You take quality personally', 'A bad part leaving this shop reflects on all of us. We\u2019re looking for people who care about that.'],
-    ['You work well with others', 'This is a small team. Attitude matters. We\u2019d rather have someone with less experience and the right mindset than a highly skilled machinist who makes everyone miserable.'],
+    ['You work well with others', 'This is a small team. Attitude matters. We\u2019d rather have someone with the right mindset than a highly skilled machinist who makes everyone miserable.'],
   ];
   const roles = ['Experienced CNC machinists — setup & operation', 'Machinists with manual mill & lathe experience', 'Candidates with some shop experience, ready to train up'];
 
@@ -25,7 +25,7 @@ function CareersScreen({ go }) {
     <main>
       {/* HERO */}
       <section style={{ position: 'relative', background: 'var(--steel-900)', color: '#fff', overflow: 'hidden' }}>
-        <img src="/assets/img/production-floor-panoramic.jpg" alt="The Damark Manufacturing production floor in Lomira, WI, where CNC machinists work" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
+        <img src="/assets/img/production-floor-panoramic.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(14,18,54,0.94), rgba(14,18,54,0.55))' }} />
         <div style={{ ...wrap, position: 'relative', padding: '76px 32px 68px' }}>
           <SectionEyebrow color="var(--chrome-cyan)">Careers</SectionEyebrow>
@@ -90,13 +90,6 @@ function CareersScreen({ go }) {
         </div>
       </section>
 
-      {/* QUOTE */}
-      <section style={{ ...wrap, padding: '64px 32px' }}>
-        <PullQuote tone="dark">
-          We'd rather have someone with less experience and the right mindset than a highly skilled machinist who makes everyone miserable.
-        </PullQuote>
-      </section>
-
       {/* APPLY */}
       <section id="apply" style={{ background: 'var(--blue-600)', color: '#fff' }}>
         <div style={{ ...wrap, padding: '72px 32px', display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 56, alignItems: 'start' }}>
@@ -108,7 +101,7 @@ function CareersScreen({ go }) {
             </p>
             <p style={{ fontSize: 16, color: '#fff', fontWeight: 600, marginTop: 18 }}>Questions before you apply?</p>
             <a href="tel:9202697825" style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 28, color: '#fff', textDecoration: 'none' }}>(920) 269-7825</a>
-            <p style={{ fontSize: 15, color: 'var(--blue-100)', margin: '4px 0 0' }}>Or stop by — Mon–Fri, 6:00 AM – 2:30 PM · 1015 Church St, Lomira, WI</p>
+            <p style={{ fontSize: 15, color: 'var(--blue-100)', margin: '4px 0 0' }}>Or stop by — Mon–Fri, 6:00 AM – 2:30 PM · 1015 Church Street, Lomira, WI</p>
           </div>
           <div style={{ background: '#fff', borderRadius: 'var(--radius-md)', padding: 'var(--space-6)' }}>
                             <iframe

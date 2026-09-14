@@ -1,0 +1,296 @@
+From 3f73589d821d570b5da794bff869eba8fb92c9a7 Mon Sep 17 00:00:00 2001
+From: Vincent Wondra <vincent@thebbsagency.com>
+Date: Mon, 14 Sep 2026 21:27:28 +0000
+Subject: [PATCH] Add GA4 tracking (G-JYC9K08JQE) to all published pages
+
+Inserts the gtag.js snippet immediately after <head> on all 12 published
+pages, and in the doc() template in src/build/build.mjs so future rebuilds
+keep it.
+
+The tag was inserted directly into the generated HTML rather than by
+rebuilding: src/servicesData.js has drifted from the published pages, so a
+rebuild reverts the images updated in 50db871 (and their alt text) on
+services/, prototyping, cnc-precision-machining, reverse-engineering and
+shop-to-shop. No other markup was changed.
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Tvyf9SQ6m6YRWUva9A9oYg
+---
+ about/index.html                            | 9 +++++++++
+ careers/index.html                          | 9 +++++++++
+ contact/index.html                          | 9 +++++++++
+ index.html                                  | 9 +++++++++
+ services/cnc-precision-machining/index.html | 9 +++++++++
+ services/emergency-support/index.html       | 9 +++++++++
+ services/fabrication-welding/index.html     | 9 +++++++++
+ services/fixturing-tooling/index.html       | 9 +++++++++
+ services/index.html                         | 9 +++++++++
+ services/prototyping/index.html             | 9 +++++++++
+ services/reverse-engineering/index.html     | 9 +++++++++
+ services/shop-to-shop/index.html            | 9 +++++++++
+ src/build/build.mjs                         | 9 +++++++++
+ 13 files changed, 117 insertions(+)
+
+diff --git a/about/index.html b/about/index.html
+index 8859015..337203c 100644
+--- a/about/index.html
++++ b/about/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
++<!-- Google tag (gtag.js) -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYC9K08JQE"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++
++  gtag('config', 'G-JYC9K08JQE');
++</script>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>About Damark Manufacturing — 30 Years of Honest Work | Lomira, WI</title>
+diff --git a/careers/index.html b/careers/index.html
+index 512a3ca..2e0b043 100644
+--- a/careers/index.html
++++ b/careers/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
++<!-- Google tag (gtag.js) -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYC9K08JQE"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++
++  gtag('config', 'G-JYC9K08JQE');
++</script>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Precision Machining Jobs in Lomira, WI | Damark Manufacturing</title>
+diff --git a/contact/index.html b/contact/index.html
+index d09cdf2..7d2db60 100644
+--- a/contact/index.html
++++ b/contact/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
++<!-- Google tag (gtag.js) -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYC9K08JQE"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++
++  gtag('config', 'G-JYC9K08JQE');
++</script>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Contact Damark Manufacturing — Request a Quote | Lomira, WI</title>
+diff --git a/index.html b/index.html
+index 95e7b3d..1539fb1 100644
+--- a/index.html
++++ b/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
++<!-- Google tag (gtag.js) -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYC9K08JQE"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++
++  gtag('config', 'G-JYC9K08JQE');
++</script>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Damark Manufacturing — Precision Machining &amp; Production Work | Lomira, WI</title>
+diff --git a/services/cnc-precision-machining/index.html b/services/cnc-precision-machining/index.html
+index 6980ef0..52c3dbd 100644
+--- a/services/cnc-precision-machining/index.html
++++ b/services/cnc-precision-machining/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
++<!-- Google tag (gtag.js) -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYC9K08JQE"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++
++  gtag('config', 'G-JYC9K08JQE');
++</script>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>CNC Precision Machining: Small Batch to Production Runs | Damark Manufacturing</title>
+diff --git a/services/emergency-support/index.html b/services/emergency-support/index.html
+index b1ca084..a423200 100644
+--- a/services/emergency-support/index.html
++++ b/services/emergency-support/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
++<!-- Google tag (gtag.js) -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYC9K08JQE"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++
++  gtag('config', 'G-JYC9K08JQE');
++</script>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>After-Hours Support for Existing Customers | Damark Manufacturing</title>
+diff --git a/services/fabrication-welding/index.html b/services/fabrication-welding/index.html
+index 5079bc2..0389441 100644
+--- a/services/fabrication-welding/index.html
++++ b/services/fabrication-welding/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
++<!-- Google tag (gtag.js) -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYC9K08JQE"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++
++  gtag('config', 'G-JYC9K08JQE');
++</script>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>In-House Fabrication &amp; Welding | Damark Manufacturing</title>
+diff --git a/services/fixturing-tooling/index.html b/services/fixturing-tooling/index.html
+index 7389826..2656127 100644
+--- a/services/fixturing-tooling/index.html
++++ b/services/fixturing-tooling/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
++<!-- Google tag (gtag.js) -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYC9K08JQE"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++
++  gtag('config', 'G-JYC9K08JQE');
++</script>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Weld Fixtures, Machining Fixtures &amp; Custom Tooling | Damark Manufacturing</title>
+diff --git a/services/index.html b/services/index.html
+index ad40d04..891352a 100644
+--- a/services/index.html
++++ b/services/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
++<!-- Google tag (gtag.js) -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYC9K08JQE"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++
++  gtag('config', 'G-JYC9K08JQE');
++</script>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Machining, Tooling &amp; Production Services | Damark Manufacturing</title>
+diff --git a/services/prototyping/index.html b/services/prototyping/index.html
+index c6e30bf..a447976 100644
+--- a/services/prototyping/index.html
++++ b/services/prototyping/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
++<!-- Google tag (gtag.js) -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYC9K08JQE"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++
++  gtag('config', 'G-JYC9K08JQE');
++</script>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Prototype Parts Made Right, From Sketch to Finished Piece | Damark Manufacturing</title>
+diff --git a/services/reverse-engineering/index.html b/services/reverse-engineering/index.html
+index 988cc64..c11cf15 100644
+--- a/services/reverse-engineering/index.html
++++ b/services/reverse-engineering/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
++<!-- Google tag (gtag.js) -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYC9K08JQE"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++
++  gtag('config', 'G-JYC9K08JQE');
++</script>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Reverse Engineering: When the Drawing Doesn’t Exist | Damark Manufacturing</title>
+diff --git a/services/shop-to-shop/index.html b/services/shop-to-shop/index.html
+index 2288f1c..e692d27 100644
+--- a/services/shop-to-shop/index.html
++++ b/services/shop-to-shop/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
++<!-- Google tag (gtag.js) -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYC9K08JQE"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++
++  gtag('config', 'G-JYC9K08JQE');
++</script>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Overflow &amp; Specialty Work for Other Shops | Damark Manufacturing</title>
+diff --git a/src/build/build.mjs b/src/build/build.mjs
+index 25102c6..1568179 100644
+--- a/src/build/build.mjs
++++ b/src/build/build.mjs
+@@ -107,6 +107,15 @@ function doc({title,desc,path,body,ogimg,head}){
+   return `<!DOCTYPE html>
+ <html lang="en">
+ <head>
++<!-- Google tag (gtag.js) -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYC9K08JQE"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++
++  gtag('config', 'G-JYC9K08JQE');
++</script>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>${esc(title)}</title>
+-- 
+2.43.0
+

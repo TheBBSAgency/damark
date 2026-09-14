@@ -1,0 +1,38 @@
+[33mcommit 50db8711a15d704bfec3f85f3f9661352a5ee772[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: TheBBSAgency <33429730+TheBBSAgency@users.noreply.github.com>
+Date:   Mon Sep 14 09:17:33 2026 -0500
+
+    Updated Images
+
+ README.md                                   |   2 [32m+[m[31m-[m
+ about/index.html                            |   2 [32m+[m[31m-[m
+ assets/img/doosan-dnm400.jpg                | Bin [31m122858[m -> [32m128629[m bytes
+ assets/img/doosan-hp4000l.webp              | Bin [31m0[m -> [32m234540[m bytes
+ assets/img/equipment-doosan.jpg             | Bin [31m122858[m -> [32m128629[m bytes
+ assets/img/haas-sl30t-2.webp                | Bin [31m0[m -> [32m296478[m bytes
+ assets/img/hq-lomira.jpg                    | Bin [31m134983[m -> [32m140754[m bytes
+ assets/img/iso-compliant.jpg                | Bin [31m99536[m -> [32m105307[m bytes
+ assets/img/precision-machining.jpg          | Bin [31m230016[m -> [32m235787[m bytes
+ assets/img/production-floor-panoramic.jpg   | Bin [31m260126[m -> [32m265897[m bytes
+ assets/img/quality-inspection.jpg           | Bin [31m72525[m -> [32m78296[m bytes
+ assets/img/services-1.jpg                   | Bin [31m139934[m -> [32m145705[m bytes
+ assets/img/services-2.jpg                   | Bin [31m122743[m -> [32m128514[m bytes
+ assets/img/takisawa-nex105.webp             | Bin [31m0[m -> [32m257464[m bytes
+ assets/img/takisawa-nex106-3.webp           | Bin [31m0[m -> [32m146796[m bytes
+ assets/img/tooling-fabrication-banner.png   | Bin [31m96169[m -> [32m101939[m bytes
+ assets/img/trak-dpm5.jpg                    | Bin [31m333103[m -> [32m338874[m bytes
+ assets/img/various-workstations.webp        | Bin [31m0[m -> [32m412264[m bytes
+ assets/img/welding.jpg                      | Bin [31m43462[m -> [32m49233[m bytes
+ assets/logo/damark-logo-2026.png            | Bin [31m25147[m -> [32m30917[m bytes
+ assets/logo/damark-logo-navy.png            | Bin [31m41461[m -> [32m47231[m bytes
+ assets/logo/damark-logo.jpg                 | Bin [31m81218[m -> [32m86989[m bytes
+ index.html                                  |   2 [32m+[m[31m-[m
+ services/cnc-precision-machining/index.html |   4 [32m++[m[31m--[m
+ services/index.html                         |   2 [32m+[m[31m-[m
+ services/prototyping/index.html             |   4 [32m++[m[31m--[m
+ services/reverse-engineering/index.html     |   4 [32m++[m[31m--[m
+ services/shop-to-shop/index.html            |   4 [32m++[m[31m--[m
+ src/AboutScreen.jsx                         |   4 [32m++[m[31m--[m
+ src/HomeScreen.jsx                          |   4 [32m++[m[31m--[m
+ src/ServicesScreen.jsx                      |   2 [32m+[m[31m-[m
+ 31 files changed, 17 insertions(+), 17 deletions(-)

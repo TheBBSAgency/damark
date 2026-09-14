@@ -124,7 +124,7 @@ function HomeScreen({ go, tweaks = {} }) {
       <section style={{ ...wrap, padding: '88px 32px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
           <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-            <img src="/assets/img/trak-dpm5.jpg" alt="TRAK DPM5 CNC bed mill on the Damark Manufacturing shop floor in Lomira, WI" style={{ display: 'block', width: '100%', height: '440px', objectFit: 'cover' }} />
+            <img src="/assets/img/various-workstations.webp" alt="Machining workstations on the Damark Manufacturing shop floor in Lomira, WI" style={{ display: 'block', width: '100%', height: '440px', objectFit: 'cover' }} />
           </div>
           <div>
             <SectionEyebrow>Ground to Sky</SectionEyebrow>
@@ -151,7 +151,7 @@ function HomeScreen({ go, tweaks = {} }) {
             <window.LinkButton variant="secondary" href={window.href('about')} style={{color: '#fff', backgroundColor: '#1D2675', border: 'none', marginTop: 8}}>Learn More About Damark →</window.LinkButton>
           </div>
           <div style={{ border: '1px solid var(--blue-800)', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
-            <img src="/assets/img/hq-lomira.jpg" alt="Damark Manufacturing headquarters building in Lomira, WI" style={{ width: '100%', display: 'block' }} />
+            <img src="/assets/img/hq-lomira.jpg" alt="Damark Manufacturing headquarters building in Lomira, WI" style={{ width: '100%', height: 340, objectFit: 'cover', display: 'block' }} />
           </div>
         </div>
       </section>

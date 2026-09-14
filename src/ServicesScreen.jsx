@@ -18,7 +18,7 @@ function ServicesScreen({ go }) {
     <main>
       {/* PAGE HEADER */}
       <section style={{ position: 'relative', background: 'var(--steel-900)', color: '#fff', overflow: 'hidden' }}>
-        <img src="/assets/img/precision-machining.jpg" alt="Damark machinist running a CNC lathe in the Lomira, WI machine shop" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
+        <img src="/assets/img/haas-sl30t-2.webp" alt="Haas SL-30T CNC lathe on the Damark Manufacturing shop floor in Lomira, WI" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(14,18,54,0.95) 0%, rgba(14,18,54,0.8) 48%, rgba(14,18,54,0.4) 100%)' }} />
         <div style={{ ...wrap, position: 'relative', padding: '72px 32px 64px' }}>
           <SectionEyebrow color="var(--chrome-cyan)">Services</SectionEyebrow>

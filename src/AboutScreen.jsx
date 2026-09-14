@@ -118,7 +118,7 @@ function AboutScreen({ go }) {
           </div>
           <div style={{ position: 'sticky', top: 116, display: 'flex', flexDirection: 'column', gap: 20 }}>
             <div style={{ border: '1px solid var(--blue-800)', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
-              <img src="/assets/img/hq-lomira.jpg" alt="Damark Manufacturing headquarters building in Lomira, WI" style={{ width: '100%', display: 'block' }} />
+              <img src="/assets/img/hq-lomira.jpg" alt="Damark Manufacturing headquarters building in Lomira, WI" style={{ width: '100%', height: 260, objectFit: 'cover', display: 'block' }} />
             </div>
             <PullQuote name="Dave Buerger" title="Founder" tone="brand">
               Everybody was betting against me. They were taking bets on how soon I'd be out.
@@ -131,7 +131,7 @@ function AboutScreen({ go }) {
       <section style={{ ...wrap, padding: '80px 32px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 56, alignItems: 'start' }}>
           <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-            <img src="/assets/img/precision-machining.jpg" alt="Damark machinist operating a CNC lathe in the Lomira, WI machine shop" style={{ width: '100%', display: 'block' }} />
+            <img src="/assets/img/precision-machining.jpg" alt="Damark machinist operating a CNC lathe in the Lomira, WI machine shop" style={{ width: '100%', height: 420, objectFit: 'cover', display: 'block' }} />
           </div>
           <div>
             <SectionEyebrow>The Next Generation</SectionEyebrow>

@@ -56,7 +56,7 @@ The connected host redeploys automatically on push.
 ## Notes
 
 - The "Ground to Sky" section on the home page used an empty image placeholder
-  in the original export; it now shows `assets/img/trak-dpm5.jpg`. Swap it in
+  in the original export; it now shows `assets/img/various-workstations.webp`. Swap it in
   `src/HomeScreen.jsx` if you want a different photo.
 - Fonts load from the design tokens; if a font is self-hosted or external,
   it is referenced in `tokens/fonts.css`.

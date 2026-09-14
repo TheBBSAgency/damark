@@ -14,7 +14,7 @@ const OUT = resolve(__dirname, '..', '..');    // repo root (served site)
 // Currently the live host: GitHub Pages at thebbsagency.github.io/damark.
 // AT GO-LIVE on the real domain, change this ONE line to 'https://www.damarkmfg.com'
 // (and add a CNAME + DNS), then rebuild — every absolute URL moves with it.
-const SITE_URL = process.env.SITE_URL || 'https://thebbsagency.github.io/damark';
+const SITE_URL = process.env.SITE_URL || 'https://damarkmfg.com';
 
 // Cache-busting: hash each linked stylesheet's contents at build time and append
 // it as ?v=<hash>. The version changes only when the CSS changes, so browsers
